@@ -1,10 +1,12 @@
 {
-  "name": "blessed",
+  "name": "bbblessed",
   "description": "A high-level terminal interface library for node.js.",
   "author": "Christopher Jeffrey",
-  "version": "0.1.81",
+  "version": "0.1.82",
   "license": "MIT",
+  "type": "commonjs",
   "main": "./lib/blessed.js",
+  "types": "./bbblessed.d.ts",
   "bin": "./bin/tput.js",
   "preferGlobal": false,
   "repository": "git://github.com/chjj/blessed.git",
@@ -17,5 +19,8 @@
   },
   "browserify": {
     "transform": ["./browser/transform.js"]
+  },
+  "dependencies": {
+    "@xterm/xterm": "5.5.0"
   }
 }

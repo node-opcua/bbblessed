@@ -12,8 +12,8 @@
   "keywords": ["ansi", "art"],
   "tags": ["ansi", "art"],
   "dependencies": {
-    "blessed": ">=0.1.5",
-    "term.js": "0.0.4",
+    "bbblessed": ">=0.1.5",
+    "@xterm/xterm": "5.5.0",
     "request": "2.55.0"
   }
 }
