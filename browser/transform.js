@@ -3,7 +3,7 @@
  * Copyright (c) 2013-2015, Christopher Jeffrey and contributors (MIT License).
  * https://github.com/chjj/blessed
  */
-
+var path = require('path');
 var Transform = require('stream').Transform
   , path = require('path')
   , fs = require('fs');
@@ -43,8 +43,8 @@ var requireWidgets = widgets.reduce(function(out, name) {
  * terminfo or termcap, just use xterm terminfo/cap.
  */
 
-var infoPath = path.resolve(__dirname, '..', 'usr', 'xterm-256color')
-  , capPath = path.resolve(__dirname, '..', 'usr', 'xterm.termcap');
+var infoPath = path.resolve(path.join(__dirname, '../usr/xterm-256color'))
+  , capPath = path.resolve(path.join(__dirname, '../usr/xterm.termcap'));
 
 var infoPathFake = path.resolve(
   path.sep, 'usr', 'share', 'terminfo',
@@ -53,7 +53,7 @@ var infoPathFake = path.resolve(
 );
 
 function readMethods() {
-  Tput._infoBuffer = new Buffer(TERMINFO, 'base64');
+  Tput._infoBuffer = Buffer.from(TERMINFO, 'base64');
 
   Tput.prototype.readTerminfo = function() {
     this.terminal = TERMINFO_NAME;
